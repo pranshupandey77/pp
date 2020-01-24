@@ -1,3 +1,21 @@
 <?php
-echo "<H1>Welcome to GEU !!</H1>"
+
+/*** mysql hostname ***/
+$hostname = 'localhost';
+
+/*** mysql username ***/
+$username = 'username';
+
+/*** mysql password ***/
+$password = 'password';
+
+try {
+    $dbh = new PDO("mysql:host=$hostname;dbname=mysql", $username, $password);
+    /*** echo a message saying we have connected ***/
+    echo 'Connected to database';
+    }
+catch(PDOException $e)
+    {
+    echo $e->getMessage();
+    }
 ?>
